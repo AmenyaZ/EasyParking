@@ -75,33 +75,33 @@ public class MainActivity extends AppCompatActivity {
         };
 
         LogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                                     @Override
+                                     public void onClick(View v) {
 
-                String email = UserMail.getText().toString();
-                String pass = Password.getText().toString();
+                                         String email = UserMail.getText().toString();
+                                         String pass = Password.getText().toString();
 
-                if (email.isEmpty()) {
-                    UserMail.setError("Please Enter Email Address");
-                } else if (pass.isEmpty()) {
-                    Password.setError("Please enter the password");
-                } else if (email.isEmpty() && pass.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "All Fields are Empty", Toast.LENGTH_LONG).show();
-                } else if (!(email.isEmpty() && pass.isEmpty())) {
-                    mFirebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "LogIn Error, Please Check Your Credentials", Toast.LENGTH_LONG).show();
-                            } else {
-                                Intent intHome = new Intent(MainActivity.this, SecondActivity.class);
-                                startActivity(intHome);
-                            }
-                        }
+                                         if (email.isEmpty()) {
+                                             UserMail.setError("Please Enter Email Address");
+                                         } else if (pass.isEmpty()) {
+                                             Password.setError("Please enter the password");
+                                         } else if (email.isEmpty() && pass.isEmpty()) {
+                                             Toast.makeText(MainActivity.this, "All Fields are Empty", Toast.LENGTH_LONG).show();
+                                         } else if (!(email.isEmpty() && pass.isEmpty())) {
+                                             mFirebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                                                 @Override
+                                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                                     if (!task.isSuccessful()) {
+                                                         Toast.makeText(MainActivity.this, "LogIn Error, Please Check Your Credentials", Toast.LENGTH_LONG).show();
+                                                     } else {
+                                                         Intent intHome = new Intent(MainActivity.this, SecondActivity.class);
+                                                         startActivity(intHome);
+                                                     }
+                                                 }
 
 
-                    });
-                }
+                                             });
+                                         }
 //                Register.setOnClickListener(new View.OnClickListener() {
 //                    @Override
 //                    public void onClick(View v) {
@@ -126,15 +126,14 @@ public class MainActivity extends AppCompatActivity {
 //                TxtView.setText(spannableString);
 //                TxtView.setMovementMethod(LinkMovementMethod.getInstance());
 
-            }
+                                     }
 
 
-        }
+                                 }
 
 
         );}
 
 
 }
-
 

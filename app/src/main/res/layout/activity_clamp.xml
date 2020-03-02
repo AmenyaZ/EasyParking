@@ -4,16 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ss"
     tools:context=".ClampActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btTrailers"
+        android:layout_width="386dp"
         android:layout_height="wrap_content"
-        android:text="Clamping "
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Trailers and Semi-Trailers"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVc3" />
+
+    <Button
+        android:id="@+id/btVc1"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Vehicles up to 3 Tons"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btVc2"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Vehicles 3.1 - 7 Tons"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVc1" />
+
+    <Button
+        android:id="@+id/btVc3"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Vehicles Over 7 Tons"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVc2" />
+
+    <Button
+        android:id="@+id/btBAclamp"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Clamp Around Bus Area"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btTrailers" />
+
+    <Button
+        android:id="@+id/btImpoundStore"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Impound Storage"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btBAclamp" />
+
+    <Button
+        android:id="@+id/btImpound"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Impounding"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btImpoundStore" />
+
+    <Button
+        android:id="@+id/btOthers"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Other Nuisance"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btObstruction"
+        app:layout_constraintVertical_bias="0.246" />
+
+    <Button
+        android:id="@+id/btObstruction"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Obstruction"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btImpound" />
 </androidx.constraintlayout.widget.ConstraintLayout>

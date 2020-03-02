@@ -4,16 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ss"
     tools:context=".DailyParking">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btV1"
+        android:layout_width="386dp"
         android:layout_height="wrap_content"
-        android:text="Daily Parking"
+        android:layout_marginTop="272dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Vehicles up to 2 Tons"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btV5"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Trailers and Semi-Trailers"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btV4"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <Button
+        android:id="@+id/btV2"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Vehicles 2.1 - 3 Tons"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btV1" />
+
+    <Button
+        android:id="@+id/btV3"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Vehicles 3.1 - 7 Tons"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btV2" />
+
+    <Button
+        android:id="@+id/btV4"
+        android:layout_width="386dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00A1A3AE"
+        android:fontFamily="@font/carter_one"
+        android:text="  Vehicles over 7 Tons"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btV3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

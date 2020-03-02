@@ -25,6 +25,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         BusPark =(Button)findViewById(R.id.btBusPark);
         Dailypark =(Button)findViewById(R.id.btDailyPark);
