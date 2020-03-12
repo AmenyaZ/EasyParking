@@ -3,7 +3,11 @@ package com.example.smartparking;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.SpannableString;
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private Button LogIn;
     private TextView Register;
     private TextView About;
+    private View mProgressView;
+    private View mLoginFormView;
+    private TextView tvLoad;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStatelistener;
 
@@ -49,14 +56,23 @@ public class MainActivity extends AppCompatActivity {
         LogIn = (Button)findViewById(R.id.btnLogIn);
         Register =(TextView)findViewById(R.id.tvRegister);
         About = (TextView)findViewById(R.id.tvAbout);
+        mProgressView = (View)findViewById(R.id.login_progress);
+        mLoginFormView = (View)findViewById(R.id.login_form);
+        tvLoad = (TextView)findViewById(R.id.tvLoad);
+
+//        showProgress(true);
+//        tvLoad.setText("Checking Credentials");
         mFirebaseAuth = FirebaseAuth.getInstance();
 
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Register.class);
+
                 startActivity(intent);
+                showProgress(true);
                 finish();
+                return;
             }
         });
 
@@ -96,35 +112,15 @@ public class MainActivity extends AppCompatActivity {
                                                      } else {
                                                          Intent intHome = new Intent(MainActivity.this, SecondActivity.class);
                                                          startActivity(intHome);
+                                                         showProgress(true);
+                                                         return;
                                                      }
                                                  }
 
 
                                              });
                                          }
-//                Register.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        Intent intent = new Intent(MainActivity.this, Register.class);
-//                        startActivity(intent);
-//                    }
-//                });
 
-//
-//                String Text = "Register here";
-//                SpannableString spannableString = new SpannableString(Text);
-//                final ClickableSpan clickableSpan1 = new ClickableSpan() {
-//                    @Override
-//                    public void onClick(@NonNull View widget) {
-//                        Toast.makeText(MainActivity.this, "Registration", Toast.LENGTH_SHORT).show();
-//                        Intent intent = new Intent(MainActivity.this, Register.class);
-//                        startActivity(intent);
-//                    }
-//
-//                };
-//                spannableString.setSpan(clickableSpan1, 9, 13, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-//                TxtView.setText(spannableString);
-//                TxtView.setMovementMethod(LinkMovementMethod.getInstance());
 
                                      }
 
@@ -133,6 +129,58 @@ public class MainActivity extends AppCompatActivity {
 
 
         );}
+
+    /**
+     * Shows the progress UI and hides the login form.
+     */
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    private void showProgress(final boolean show) {
+        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
+        // for very easy animations. If available, use these APIs to fade-in
+        // the progress spinner.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+                }
+            });
+
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            mProgressView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+
+            tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+            tvLoad.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+        } else {
+            // The ViewPropertyAnimator APIs are not available, so simply show
+            // and hide the relevant UI components.
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+        }
+    }
+
+
+
+
+
+
 
 
 }

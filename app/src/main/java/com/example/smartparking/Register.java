@@ -116,6 +116,7 @@ public class Register extends AppCompatActivity {
                 //Toast.makeText(Register.this, "Kindly LogIn now", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Register.this, MainActivity.class);
                 startActivity(intent);
+                return;
             }
         };
         spannableString.setSpan(clickableSpan1 ,25, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

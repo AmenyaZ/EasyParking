@@ -1,91 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gg"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnLogIn"
-        android:layout_width="97dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="52dp"
-        android:background="@drawable/nn"
-        android:fontFamily="@font/arbutus"
-        android:text="LogIn"
-        android:textColor="#010710"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
-
-    <TextView
-        android:id="@+id/tvRegister"
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:clickable="true"
-        android:text="Register here"
-        android:textColor="#010710"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogIn"
-        app:layout_constraintVertical_bias="0.063" />
-
-    <TextView
-        android:id="@+id/tvAbout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:background="#00000000"
-        android:text="User LogIn"
-        android:textColor="#F6F6F6"
-        android:textSize="36sp"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:text="Loading...please wait..."
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        app:fontFamily="@font/emblema_one"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="gone" />
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="277dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="116dp"
-        android:background="@drawable/sdds"
-        android:ems="10"
-        android:hint="Enter your Email"
-        android:inputType="textEmailAddress"
-        android:textColor="#010710"
-        android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="277dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/sdds"
-        android:ems="10"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        android:textColor="#010710"
-        android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="right|center_horizontal"
+        android:id="@+id/login_form">
+
+
+        <TextView
+            android:id="@+id/tvAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="#00000000"
+            android:layout_gravity="center"
+            android:text="User LogIn"
+            android:textColor="#F6F6F6"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/emblema_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="277dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="116dp"
+            android:background="@drawable/sdds"
+            android:ems="10"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress"
+            android:textColor="#010710"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="277dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/sdds"
+            android:ems="10"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:textColor="#010710"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+        <Button
+            android:id="@+id/btnLogIn"
+            android:layout_width="97dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/nn"
+            android:fontFamily="@font/arbutus"
+            android:text="LogIn"
+            android:textColor="#010710"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            android:clickable="true"
+            android:text="Register here"
+            android:textColor="#010710"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogIn"
+            app:layout_constraintVertical_bias="0.063" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
