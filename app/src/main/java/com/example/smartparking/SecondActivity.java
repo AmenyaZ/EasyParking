@@ -8,7 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.smartparking.Breakdwn.BreakDown;
+import com.example.smartparking.BusPrk.BusParking;
+import com.example.smartparking.Clamping.ClampActivity;
+import com.example.smartparking.Cont.ContactActivity;
+import com.example.smartparking.DailyPrk.DailyParking;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -26,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         BusPark =(Button)findViewById(R.id.btBusPark);
         Dailypark =(Button)findViewById(R.id.btDailyPark);
         Breakdown = (Button)findViewById(R.id.btBreakDown);
@@ -35,54 +42,36 @@ public class SecondActivity extends AppCompatActivity {
         LogOut =(TextView)findViewById(R.id.tvLogOut);
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        Contact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, ContactActivity.class);
-                startActivity(intent);
-            }
+        Contact.setOnClickListener(v -> {
+            Intent intent = new Intent(SecondActivity.this, ContactActivity.class);
+            startActivity(intent);
         });
 
-        Clumping.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, ClampActivity.class);
-                startActivity(intent);
-            }
+        Clumping.setOnClickListener(v -> {
+            Intent intent = new Intent(SecondActivity.this, ClampActivity.class);
+            startActivity(intent);
         });
 
-        Breakdown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, BreakDown.class);
-                startActivity(intent);
-            }
+        Breakdown.setOnClickListener(v -> {
+            Intent intent = new Intent(SecondActivity.this, BreakDown.class);
+            startActivity(intent);
         });
 
-        Dailypark.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, DailyParking.class);
-                startActivity(intent);
-            }
+        Dailypark.setOnClickListener(v -> {
+            Intent intent = new Intent(SecondActivity.this, DailyParking.class);
+            startActivity(intent);
         });
-        BusPark.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, BusParking.class);
-                startActivity(intent);
-            }
+        BusPark.setOnClickListener(v -> {
+            Intent intent = new Intent(SecondActivity.this, BusParking.class);
+            startActivity(intent);
         });
 
-        LogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        LogOut.setOnClickListener(v -> {
 
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
-                startActivity(intent);
-                return;
-            }
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+            startActivity(intent);
+            return;
         });
     }
 }

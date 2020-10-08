@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bt"
-    tools:context=".ImpoundStorePay">
+    tools:context=".Clamping.ImpoundStorePay">
 
     <androidx.cardview.widget.CardView
         android:layout_width="401dp"

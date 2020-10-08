@@ -3,7 +3,11 @@ package com.example.smartparking;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -31,6 +35,9 @@ public class Register extends AppCompatActivity {
     private TextView textView;
     private TextView Email;
     private Button Register;
+    private View mProgressView;
+    private View mLoginFormView;
+    private TextView tvLoad;
     FirebaseAuth mFirebaseAuth;
 
 
@@ -50,6 +57,9 @@ public class Register extends AppCompatActivity {
         Password = (EditText)findViewById(R.id.etPassword);
         Password2 = (EditText)findViewById(R.id.etPassword2);
         Email = (TextView)findViewById(R.id.etEmail);
+        mProgressView = (View)findViewById(R.id.login_progress);
+        mLoginFormView = (View)findViewById(R.id.login_form);
+        tvLoad = (TextView)findViewById(R.id.tvLoad);
 
 
         Register.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +108,8 @@ public class Register extends AppCompatActivity {
                             }
                             else {
                                 startActivity(new Intent(Register.this, MainActivity.class));
+                                showProgress(true);
+                                return;
                             }
                         }
                     });
@@ -116,6 +128,8 @@ public class Register extends AppCompatActivity {
                 //Toast.makeText(Register.this, "Kindly LogIn now", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Register.this, MainActivity.class);
                 startActivity(intent);
+                showProgress(true);
+                finish();
                 return;
             }
         };
@@ -124,6 +138,49 @@ public class Register extends AppCompatActivity {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
 
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    private void showProgress(final boolean show) {
+        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
+        // for very easy animations. If available, use these APIs to fade-in
+        // the progress spinner.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+                }
+            });
+
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            mProgressView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+
+            tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+            tvLoad.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+        } else {
+            // The ViewPropertyAnimator APIs are not available, so simply show
+            // and hide the relevant UI components.
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+        }
     }
 }
 

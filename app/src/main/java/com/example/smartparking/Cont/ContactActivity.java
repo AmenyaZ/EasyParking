@@ -1,14 +1,16 @@
-package com.example.smartparking;
+package com.example.smartparking.Cont;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class AccReport extends AppCompatActivity {
+import com.example.smartparking.R;
+
+public class ContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acc_report);
+        setContentView(R.layout.activity_contact);
     }
 }

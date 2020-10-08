@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">EasyParking</string>
+    <string name="already_have_an_account_login">Already have an account, LogIn</string>
+    <string name="loading_please_wait">Loading…please wait…</string>
+    <string name="enter_the_first_name">Enter The first Name</string>
+    <string name="enter_the_second_name">Enter The Second Name</string>
+    <string name="enter_your_username">Enter Your Username</string>
+    <string name="type_in_your_password">Type in Your Password</string>
+    <string name="confirm_your_password">Confirm Your Password</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="register">Register</string>
+    <string name="register_here">Register here</string>
+    <string name="concact_information">Concact Information</string>
+    <string name="taxi_registration">Taxi Registration</string>
+    <string name="buses_400_seats">Buses (400 seats)</string>
+    <string name="mini_buses_25_seats">Mini-Buses (25 seats)</string>
+    <string name="matatu_and_nissans">Matatu and Nissans</string>
+    <string name="vehicles_up_to_2_tons">Vehicles up to 2 Tons</string>
+    <string name="trailers_and_semi_trailers">Trailers and Semi-Trailers</string>
+    <string name="vehicles_2_1_3_tons">Vehicles 2.1 - 3 Tons</string>
+    <string name="vehicles_3_1_7_tons">Vehicles 3.1 - 7 Tons</string>
+    <string name="vehicles_over_7_tons">Vehicles over 7 Tons</string>
+    <string name="vehicles_over_7_tons">Vehicles over 7 Tons</string>
+    <string name="vehicles_over_7_tons">Vehicles over 7 Tons</string>
+    <string name="vehicles_1_3_tons">Vehicles 1 - 3 Tons</string>
+    <string name="vehicles_3_1_7_tons">Vehicles 3.1 - 7 Tons</string>
+    <string name="trailers_and_semi_trailers">Trailers and Semi-Trailers</string>
+    <string name="vehicles_up_to_3_tons">Vehicles up to 3 Tons</string>
+    <string name="vehicles_3_1_7_tons">Vehicles 3.1 - 7 Tons</string>
+    <string name="clamp_around_bus_area">Clamp Around Bus Area</string>
+    <string name="impound_storage">Impound Storage</string>
+    <string name="impounding">Impounding</string>
+    <string name="other_nuisance">Other Nuisance</string>
+    <string name="obstruction">Obstruction</string>
+    <string name="user_login">User LogIn</string>
+    <string name="enter_password">Enter password</string>
 </resources>

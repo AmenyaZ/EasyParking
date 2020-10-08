@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                                                          Intent intHome = new Intent(MainActivity.this, SecondActivity.class);
                                                          startActivity(intHome);
                                                          showProgress(true);
+                                                         finish();
                                                          return;
                                                      }
                                                  }

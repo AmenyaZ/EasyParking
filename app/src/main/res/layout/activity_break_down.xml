@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bt"
-    tools:context=".BreakDown">
+    tools:context=".Breakdwn.BreakDown">
 
     <Button
         android:id="@+id/btAccident"
@@ -14,7 +14,7 @@
         android:layout_marginTop="29dp"
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="  Vehicles over 7 Tons"
+        android:text="@string/vehicles_over_7_tons"
         android:textAlignment="textStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +31,7 @@
         android:layout_marginTop="26dp"
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="  Vehicles over 7 Tons"
+        android:text="@string/vehicles_over_7_tons"
         android:textAlignment="textStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:layout_marginTop="324dp"
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="  Vehicles 1 - 3 Tons"
+        android:text="@string/vehicles_1_3_tons"
         android:textAlignment="textStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
         android:layout_marginTop="36dp"
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="  Vehicles 3.1 - 7 Tons"
+        android:text="@string/vehicles_3_1_7_tons"
         android:textAlignment="textStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

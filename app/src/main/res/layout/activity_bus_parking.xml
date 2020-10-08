@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BusParking">
+    tools:context=".BusPrk.BusParking">
 
     <Button
         android:id="@+id/btTaxi"
@@ -14,7 +14,7 @@
 
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="  Taxi Registration"
+        android:text="@string/taxi_registration"
         android:textAlignment="textStart"
         android:textSize="18sp"
         android:visibility="visible"
@@ -33,7 +33,7 @@
         android:layout_marginTop="28dp"
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="  Buses (400 seats)"
+        android:text="@string/buses_400_seats"
         android:textAlignment="textStart"
         android:textSize="18sp"
         android:visibility="visible"
@@ -50,7 +50,7 @@
 
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="Mini-Buses (25 seats)"
+        android:text="@string/mini_buses_25_seats"
         android:textAlignment="textStart"
         android:textSize="18sp"
         android:visibility="visible"
@@ -67,7 +67,7 @@
 
         android:backgroundTint="#00A1A3AE"
         android:fontFamily="@font/carter_one"
-        android:text="Matatu and Nissans"
+        android:text="@string/matatu_and_nissans"
         android:textAlignment="textStart"
         android:textSize="18sp"
         android:visibility="visible"

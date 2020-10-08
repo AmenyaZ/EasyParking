@@ -1,8 +1,10 @@
-package com.example.smartparking;
+package com.example.smartparking.DailyPrk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.smartparking.R;
 
 public class V5Pay extends AppCompatActivity {
 

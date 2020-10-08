@@ -1,14 +1,16 @@
-package com.example.smartparking;
+package com.example.smartparking.Clamping;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ImpoundStorePay extends AppCompatActivity {
+import com.example.smartparking.R;
+
+public class OthersPay extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_impound_store_pay);
+        setContentView(R.layout.activity_others_pay);
     }
 }

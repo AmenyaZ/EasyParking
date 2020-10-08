@@ -1,14 +1,16 @@
-package com.example.smartparking;
+package com.example.smartparking.DailyPrk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class V1Pay extends AppCompatActivity {
+import com.example.smartparking.R;
+
+public class V3Pay extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_v1);
+        setContentView(R.layout.activity_v3_pay);
     }
 }
