@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.androidstudy.daraja.Daraja;
@@ -36,6 +37,9 @@ public class V3Pay extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         PayBtn = findViewById(R.id.btnPay);
         //  AmountInfo = findViewById(R.id.tvInfoAmount);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Daraja1 = Daraja.with("waoFzKgJGq0ZTfS0LLm7yIloiXqBnqoh", "EFUU9AtK4rjBn9nb", new DarajaListener<AccessToken>() {
             @Override

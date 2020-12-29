@@ -1,12 +1,12 @@
 package com.example.smartparking;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smartparking.Breakdwn.BreakDown;
 import com.example.smartparking.BusPrk.BusParking;
@@ -41,6 +41,9 @@ public class SecondActivity extends AppCompatActivity {
         Contact = (Button)findViewById(R.id.btContact);
         LogOut =(TextView)findViewById(R.id.tvLogOut);
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Contact.setOnClickListener(v -> {
             Intent intent = new Intent(SecondActivity.this, ContactActivity.class);

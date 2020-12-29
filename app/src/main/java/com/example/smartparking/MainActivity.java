@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,18 +43,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        UserMail = (EditText)findViewById(R.id.etEmail);
-        Password = (EditText)findViewById(R.id.etPassword);
-        LogIn = (Button)findViewById(R.id.btnLogIn);
-        Register =(TextView)findViewById(R.id.tvRegister);
-        About = (TextView)findViewById(R.id.tvAbout);
-        mProgressView = (View)findViewById(R.id.login_progress);
-        mLoginFormView = (View)findViewById(R.id.login_form);
-        tvLoad = (TextView)findViewById(R.id.tvLoad);
+        UserMail = findViewById(R.id.etEmail);
+        Password = findViewById(R.id.etPassword);
+        LogIn = findViewById(R.id.btnLogIn);
+        Register = findViewById(R.id.tvRegister);
+        About = findViewById(R.id.tvAbout);
+        mProgressView = findViewById(R.id.login_progress);
+        mLoginFormView = findViewById(R.id.login_form);
+        tvLoad = findViewById(R.id.tvLoad);
 
 //        showProgress(true);
 //        tvLoad.setText("Checking Credentials");
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Register.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,11 +1,11 @@
 package com.example.smartparking.DailyPrk;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smartparking.R;
 
@@ -27,6 +27,9 @@ public class DailyParking extends AppCompatActivity {
         V3 = (Button)findViewById(R.id.btV3);
         V4 = (Button)findViewById(R.id.btV4);
         V5 = (Button)findViewById(R.id.btV5);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         V1.setOnClickListener(v -> {
             Intent intent = new Intent(DailyParking.this, V1Pay.class);
