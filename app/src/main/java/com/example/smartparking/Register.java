@@ -37,7 +37,7 @@ public class Register extends AppCompatActivity {
     private TextView textView;
     private TextView Email;
     private Button Register;
-    private View mProgressView;
+   // private View mProgressView;
     private View mLoginFormView;
     private TextView tvLoad;
     FirebaseAuth mFirebaseAuth;
@@ -59,7 +59,7 @@ public class Register extends AppCompatActivity {
         Password = (EditText)findViewById(R.id.etPassword);
         Password2 = (EditText)findViewById(R.id.etPassword2);
         Email = (TextView)findViewById(R.id.etEmail);
-        mProgressView = (View)findViewById(R.id.login_progress);
+        //mProgressView = (View)findViewById(R.id.login_progress);
         mLoginFormView = (View)findViewById(R.id.login_form);
         tvLoad = (TextView)findViewById(R.id.tvLoad);
 
@@ -112,7 +112,7 @@ public class Register extends AppCompatActivity {
                             }
                             else {
                                 startActivity(new Intent(Register.this, MainActivity.class));
-                                showProgress(true);
+                              //  showProgress(true);
                                 return;
                             }
                         }
@@ -160,14 +160,14 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-        mProgressView.animate().setDuration(shortAnimTime).alpha(
-                show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            }
-        });
+//        mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+//        mProgressView.animate().setDuration(shortAnimTime).alpha(
+//                show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+//            @Override
+//            public void onAnimationEnd(Animator animation) {
+//                mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+//            }
+//        });
 
         tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
         tvLoad.animate().setDuration(shortAnimTime).alpha(
