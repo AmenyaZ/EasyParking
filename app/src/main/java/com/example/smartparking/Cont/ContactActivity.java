@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.smartparking.R;
 import com.example.smartparking.SecondActivity;
 
+import java.util.Objects;
+
 public class ContactActivity extends AppCompatActivity {
     private ImageView btn_backHome;
     private ProgressBar progressBar;
@@ -25,7 +27,7 @@ public class ContactActivity extends AppCompatActivity {
         progressBar= findViewById(R.id.simpleProgressBar);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        Objects.requireNonNull(actionBar).hide();
 
         btn_backHome.setOnClickListener(new View.OnClickListener() {
             @Override
