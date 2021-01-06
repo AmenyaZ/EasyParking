@@ -32,7 +32,7 @@ public class ImpoundPay extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_matatu_pay);
+        setContentView(R.layout.activity_impound_pay);
         //setSupportActionBar(toolbar);
         PayBtn = findViewById(R.id.btnPay);
         //  AmountInfo = findViewById(R.id.tvInfoAmount);
