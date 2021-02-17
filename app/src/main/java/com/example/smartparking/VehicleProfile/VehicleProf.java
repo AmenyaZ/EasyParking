@@ -30,7 +30,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class VehicleProf extends AppCompatActivity {
 
@@ -126,14 +128,16 @@ public class VehicleProf extends AppCompatActivity {
             public void onFailure(@NonNull Exception exception) {
 
                 // Handle unsuccessful uploads
-                Toast.makeText(VehicleDetails.this, "Fail...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VehicleProf.this, "Fail...", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(final UploadTask.TaskSnapshot taskSnapshot) {
 
-                Toast.makeText(VehicleDetails.this, "Success...", Toast.LENGTH_LONG).show();
+                Toast.makeText(VehicleProf.this,
+                        "Success...",
+                        Toast.LENGTH_LONG).show();
 
                 if (taskSnapshot.getMetadata() != null) {
                     if (taskSnapshot.getMetadata().getReference() != null) {
