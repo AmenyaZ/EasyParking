@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.ArrayAdapter;
@@ -31,6 +32,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -145,7 +147,7 @@ public class VehicleProf extends AppCompatActivity {
                         result.addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-                                Toast.makeText(VehicleDetails.this, "Proceed...", Toast.LENGTH_LONG).show();
+                                Toast.makeText(VehicleProf.this, "Proceed...", Toast.LENGTH_LONG).show();
                                 String sImage = uri.toString();
 
                                 mProgress.setVisibility(View.VISIBLE);
@@ -156,14 +158,14 @@ public class VehicleProf extends AppCompatActivity {
                                         mProgress.setProgress(0);
                                     }
                                 }, 500);
-                                Toast.makeText(VehicleDetails.this, "Upload Successful..." + sImage, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(VehicleProf.this, "Upload Successful..." + sImage, Toast.LENGTH_SHORT).show();
 
                                 worker = new VehicleDetails(nameWork, phoneWork, locationWork, emailWork, sImage, spec);
                                 String key = databaseReference.push().getKey();
                                 worker.setId(key);
                                 databaseReference.child(key).setValue(worker);
 
-                                Toast.makeText(VehicleDetails.this, "Success Key retention...", Toast.LENGTH_LONG).show();
+                                Toast.makeText(VehicleProf.this, "Success Key retention...", Toast.LENGTH_LONG).show();
                                 mProgress.setVisibility(View.INVISIBLE);
                                 backToProfile(nameWork, phoneWork,locationWork, emailWork, sImage, spec);
                                 name.setText("");
@@ -176,7 +178,7 @@ public class VehicleProf extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 mProgress.setVisibility(View.INVISIBLE);
-                                Toast.makeText(VehicleDetails.this, "Database Fail...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(VehicleProf.this, "Database Fail...", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -201,7 +203,7 @@ public class VehicleProf extends AppCompatActivity {
     }
 
     private void backToProfile(String nameWork, String phoneWork, String locationWork, String emailWork, String imageWork, String special) {
-        Intent backIntent = new Intent(this, Profile.class);
+        Intent backIntent = new Intent(this, ContactsContract.Profile.class);
         backIntent.putExtra("phone", phoneWork);
         backIntent.putExtra("name", nameWork);
         backIntent.putExtra("location", locationWork);
@@ -248,7 +250,7 @@ public class VehicleProf extends AppCompatActivity {
                 }
 
                 else {
-                    Toast.makeText(WorkerProfile.this, R.string.No_network, Toast.LENGTH_LONG).show();
+                    Toast.makeText(VehicleProf.this, R.string.No_network, Toast.LENGTH_LONG).show();
                 }
             }
         }
