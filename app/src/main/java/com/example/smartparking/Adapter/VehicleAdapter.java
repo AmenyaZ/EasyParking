@@ -51,12 +51,12 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.WorkerVi
         holder.recLocation.setText("Location : " + currentMechanic.getLocation());
         holder.recSpec.setText("Specialization : " + currentMechanic.getSpeciality());
 //        holder.recMail.setText("Email : " + currentMechanic.getEmail());
-        Picasso.get()
-                .load(currentMechanic.getImageUrl())
-                .placeholder(R.drawable.ic_image_black_24dp)
-                .fit()
-                .centerCrop()
-                .into(holder.recImage);
+//        Picasso.get()
+//                .load(currentMechanic.getImageUrl())
+//                .placeholder(R.drawable.ic_image_black_24dp)
+//                .fit()
+//                .centerCrop()
+//                .into(holder.recImage);
 
 
         holder.clickedLayout.setOnClickListener(new View.OnClickListener() {

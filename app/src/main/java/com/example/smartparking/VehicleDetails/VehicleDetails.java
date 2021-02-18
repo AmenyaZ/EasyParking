@@ -1,40 +1,23 @@
 package com.example.smartparking.VehicleDetails;
 
 import android.Manifest;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
-import android.webkit.MimeTypeMap;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.smartparking.R;
-import com.example.smartparking.model.VehicleModel;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class VehicleDetails extends AppCompatActivity {
     private static final int CALL_PERMISSION = 30;
@@ -87,8 +70,8 @@ public class VehicleDetails extends AppCompatActivity {
         tv_phone.setText(mechPhone);
         tv_speciality.setText(speciality);
 
-        Picasso.get().load(mechImage).placeholder(R.drawable.ic_image_black_24dp)
-                .into(mechanicImage);
+//        Picasso.get().load(mechImage).placeholder(R.drawable.ic_image_black_24dp)
+//                .into(mechanicImage);
 
         Toast.makeText(this, "Url : " + mechImage, Toast.LENGTH_SHORT).show();
     }
